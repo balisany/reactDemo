@@ -1,24 +1,32 @@
 import React from "react";
-import Header from './Header';
+import Nav from '../components/Nav';
 
 export default class Layout extends React.Component {
-  constructor(){
-  	super();
-  	this.state = {name:"Dlzar", title:"Velkommen"};
-  }
 
-  changeTitle(name){
-  	this.setState({
-  		name
-  	});
-  }
 
   render(){
+    const {location} = this.props;
+    const containerStyle = {
+      marginTop : "20px"
+    };
 
     return(
     	<div>
-      		<Header changeTitle={this.changeTitle.bind(this)} name={this.state.name} title={this.state.title}/>
-      	</div>
+      <Nav location={location} />
+            <div class="container" style={containerStyle}>
+              <div class="row">
+                <div class="col-lg-12">
+                  <h1>
+                    Overskrift
+                  </h1>
+                  {this.props.children}
+                </div>
+              </div>
+            </div>
+      </div>
     );
   }
 }
+
+
+ //	<Header changeTitle={this.changeTitle.bind(this)} name={this.state.name} title={this.state.title}/>

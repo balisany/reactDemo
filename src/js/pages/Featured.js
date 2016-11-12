@@ -3,7 +3,7 @@ import React from "react";
 export default class Featured extends React.Component {
   render(){
     return(
-      <h1>Egenskaper</h1>
+      <h2>Egenskaper</h2>
     );
   }
 }

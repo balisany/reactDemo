@@ -1,17 +1,42 @@
 import React from "react";
+import Article from '../components/Article';
+import { connect } from "react-redux"
+import { fetchUser} from "../actions/userActions"
+
+@connect((store) => {
+  return {
+    user: store.user.user,
+    userFetched: store.user.fetched
+  };
+})
 
 export default class Archives extends React.Component {
+  componentWillMount(){
+    this.props.dispatch(fetchUser())
+  }
   render(){
-//    console.log(this.props);
+
     const {query} = this.props.location;
     const {params}  = this.props;
+    const {article} = params;
     const {date, filter}  = query;
+    const {user} = this.props;
+    console.log(user);
+    if(!user.length){
+      const Artikler = user.map(item => item)
+    }
+
     return(
       <div>
-        <h2>Arkiver har ({params.article})</h2>
+        <h1>Arkiver</h1>
         <p>
-          date:{date}, filter: {filter}
+          Artikel: {article} <br />
+          Dato: {date} <br />
+          Filter: {filter}
         </p>
+        <div class="row">
+          {Artikler}
+        </div>
     </div>
     );
   }

@@ -35,6 +35,11 @@ export default class Nav extends React.Component {
       <div>
 
       <br />
+      <Link to="/">
+      <button class="btn btn-danger">
+      hjem
+      </button>
+      </Link>
           <Link to="archives" activeClassName="active">
             <button class="btn btn-primary">
               Archives
@@ -45,7 +50,6 @@ export default class Nav extends React.Component {
               Settings
           </button>
         </Link>
-        <button class="btn btn-danger" onClick={this.navigate.bind(this)}>Egenskaper</button>
         </div>
     );
   }

@@ -21,10 +21,7 @@ export default class Archives extends React.Component {
     const {article} = params;
     const {date, filter}  = query;
     const {user} = this.props;
-    console.log(user);
-    if(!user.length){
-      const Artikler = user.map(item => item)
-    }
+    const Artikler = user.map(item => <Article key={item.id} title={item.name}></Article>)
 
     return(
       <div>

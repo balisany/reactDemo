@@ -4,7 +4,7 @@ var path = require('path');
 //require("./css/style.scss");
 
 module.exports = {
-  context: path.join(__dirname, "src"),
+  context: path.join(__dirname, "demo"),
   devtool: debug ? "inline-sourcemap" : null,
   entry: "./js/client.js",
    module: {
@@ -25,7 +25,7 @@ module.exports = {
      ]
    },
    output: {
-     path: __dirname + "/src/",
+     path: __dirname + "/demo/",
      filename: "client.min.js"
    },
   plugins: debug ? [] : [

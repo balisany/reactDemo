@@ -1,0 +1,16 @@
+      ul.nav{
+            padding:  0px 20px;
+            list-style: none;
+        }
+        .nav>li {
+        position: relative;
+        display: inline-block;
+    }
+
+    a > button{
+      margin: 0px 4px;
+    }
+    a.active button{
+      background: none;
+      background-color: #033c73 !important;
+    }

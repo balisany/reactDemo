@@ -21,9 +21,12 @@
     "path": "^0.12.7",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
+    "react-lazy-load": "^3.0.10",
     "react-redux": "^4.4.6",
     "react-router": "^2.8.1",
+    "react-select2-wrapper": "^1.0.4-beta2",
     "redux": "^3.6.0",
+    "redux-infinite-scroll": "^1.0.9",
     "redux-logger": "^2.7.4",
     "redux-promise-middleware": "^4.1.0",
     "redux-thunk": "^2.1.0",
@@ -33,7 +36,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "webpack-dev-server --content-base ./src --inline --hot",
+    "dev": "webpack-dev-server --content-base ./demo --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -1,27 +1,20 @@
 import React from 'react';
 import ReactDom from "react-dom";
+import { Router, Route, IndexRoute, hashHistory} from "react-router";
 import Layout from './Layout';
+import Users from './pages/Users';
+import Posts from './pages/Posts';
+import Header from './components/Header';
 
-class Index extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      name:"Dlzar",
-      title:"her kommer info"
-    };
-  }
-
-  render(){
-  //  const name = "Dlzar";
-    return(
-      <div>
-      <Layout name={this.state.name} title={this.state.title}/>
-      <p>{this.state.name}</p>
-      </div>
-    );
-  }
-}
 
 const app = document.getElementById('app');
 
-ReactDom.render(<Index />, app);
+ReactDom.render(
+  <Router history={hashHistory}>
+          <Route path="/" component={Layout}>
+                    <IndexRoute component={Posts}> </IndexRoute>
+                    <Route path="users(/:user)" name="users" component={Users} ></Route>
+                    <Route path="posts" name="posts" component={Posts} ></Route>
+          </Route>
+  </Router>
+  , app);
